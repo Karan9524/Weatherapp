@@ -25,8 +25,6 @@ search.addEventListener('click', () => {
             return;
         }
 
-
-
         const image = document.querySelector('.weather-box img');
         const temperature = document.querySelector('.weather-box .temperature');
         const description = document.querySelector('.weather-box .description');
@@ -35,8 +33,7 @@ search.addEventListener('click', () => {
 
         if (cityHide.textContent == city) {
             return;
-        }
-        else {
+        } else {
             cityHide.textContent = city;
 
             container.style.height = '555px';
@@ -53,32 +50,31 @@ search.addEventListener('click', () => {
                 case 'Clear':
                     image.src = 'image/weather-png-9855.png';
                     break;
-    
+
                 case 'Rain':
                     image.src = 'image/weather2.png';
                     break;
-    
+
                 case 'Snow':
                     image.src = 'image/weather-png-9858.png';
                     break;
-    
+
                 case 'Clouds':
                     image.src = 'image/weather-png-9855.png';
                     break;
-    
+
                 case 'Mist':
                     image.src = 'image/mist.png';
                     break;
-    
+
                 case 'Haze':
                     image.src = 'image/mist.png';
                     break;
-    
-    
+
                 default:
                     image.src = 'image/weather-png-9843.png';
             }
-    
+
             temperature.innerHTML = `${parseInt(json.main.temp)}<span>°C</span>`;
             description.innerHTML = `${json.weather[0].description}`;
             humidity.innerHTML = `${json.main.humidity}%`;
@@ -111,10 +107,10 @@ search.addEventListener('click', () => {
             const totalCloneInfoWeather = cloneInfoWeather.length;
             const cloneInfoWeatherFirst = cloneInfoWeather[0];
 
-            const cloneInfoHumidity = document.querySelectorAll('.info-humidity.active-clone');          
+            const cloneInfoHumidity = document.querySelectorAll('.info-humidity.active-clone');
             const cloneInfoHumidityFirst = cloneInfoHumidity[0];
 
-            const cloneInfoWind = document.querySelectorAll('.info-wind.active-clone');          
+            const cloneInfoWind = document.querySelectorAll('.info-wind.active-clone');
             const cloneInfoWindFirst = cloneInfoWind[0];
 
             if (totalCloneInfoWeather > 0) {
@@ -128,9 +124,7 @@ search.addEventListener('click', () => {
                     cloneInfoWindFirst.remove();
                 }, 2200);
             }
-        }    
+        }
 
     });
-
-
 });
